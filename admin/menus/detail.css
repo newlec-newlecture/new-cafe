@@ -1,0 +1,120 @@
+/* ============================================
+   관리자 - 메뉴 상세 스타일
+   ============================================ */
+
+/* 관리자 네비 (list.css 공유) */
+.admin-nav {
+  background: var(--color-primary-dark);
+  padding: var(--space-md) 0;
+  margin-bottom: var(--space-xl);
+}
+
+.admin-nav .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-brand {
+  color: var(--color-white) !important;
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.nav-links {
+  display: flex;
+  gap: var(--space-lg);
+}
+
+.nav-links a {
+  color: rgba(255, 255, 255, 0.75);
+  font-weight: 500;
+  padding: var(--space-xs) 0;
+  border-bottom: 2px solid transparent;
+  transition: all var(--transition);
+}
+
+.nav-links a:hover,
+.nav-links.active a {
+  color: var(--color-white);
+  border-bottom-color: var(--color-accent);
+}
+
+.page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-xl);
+}
+
+.page-header h1 {
+  font-size: 1.75rem;
+}
+
+/* ---- 상세 카드 ---- */
+.detail-card {
+  padding: var(--space-xl);
+  max-width: 700px;
+}
+
+.detail-row {
+  display: flex;
+  padding: var(--space-md) 0;
+  border-bottom: 1px solid var(--color-bg-alt);
+}
+
+.detail-row:last-child {
+  border-bottom: none;
+}
+
+.detail-label {
+  width: 120px;
+  font-weight: 600;
+  color: var(--color-text-light);
+  flex-shrink: 0;
+}
+
+.detail-value {
+  flex: 1;
+}
+
+.detail-value .price {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.detail-description {
+  line-height: 1.8;
+  color: var(--color-text);
+}
+
+.detail-actions {
+  display: flex;
+  gap: var(--space-sm);
+  margin-top: var(--space-lg);
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+  .admin-nav .container {
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .page-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-md);
+  }
+
+  .detail-row {
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  .detail-label {
+    width: auto;
+  }
+}
