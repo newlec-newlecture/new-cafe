@@ -1,0 +1,143 @@
+/* menus/detail.css — 고객 메뉴 상세 페이지 */
+
+.page-content {
+  padding-top: var(--space-xl);
+  padding-bottom: var(--space-2xl);
+}
+
+.page-header {
+  margin-bottom: var(--space-lg);
+}
+
+/* 상세 카드 */
+.detail-card {
+  padding: var(--space-xl);
+  max-width: 720px;
+}
+
+.detail-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-lg);
+}
+
+.detail-placeholder {
+  width: 100%;
+  height: 300px;
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-lg);
+  background: linear-gradient(135deg, var(--color-bg-alt), var(--color-primary-light));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5rem;
+}
+
+.detail-name {
+  font-size: 2rem;
+  margin-bottom: var(--space-sm);
+}
+
+.detail-category {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-sm);
+}
+
+.detail-price {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: var(--space-md);
+}
+
+.detail-description {
+  color: var(--color-text-light);
+  line-height: 1.8;
+  margin-bottom: var(--space-lg);
+  padding-bottom: var(--space-lg);
+  border-bottom: 1px solid var(--color-bg-alt);
+}
+
+.detail-info {
+  display: flex;
+  gap: var(--space-xl);
+  margin-bottom: var(--space-lg);
+  color: var(--color-text-light);
+}
+
+.detail-info span {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+/* 수량 선택 */
+.quantity-selector {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+}
+
+.quantity-selector label {
+  font-weight: 600;
+}
+
+.quantity-selector button {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-md);
+  background: var(--color-bg-alt);
+  font-size: 1.25rem;
+  font-weight: 700;
+  transition: background var(--transition);
+}
+
+.quantity-selector button:hover {
+  background: var(--color-primary-light);
+  color: var(--color-white);
+}
+
+.quantity-selector span {
+  font-size: 1.25rem;
+  font-weight: 700;
+  min-width: 32px;
+  text-align: center;
+}
+
+/* 액션 버튼 */
+.detail-actions {
+  display: flex;
+  gap: var(--space-md);
+}
+
+.detail-actions .btn {
+  flex: 1;
+  padding: var(--space-md);
+  font-size: 1rem;
+}
+
+/* 품절 배지 */
+.out-of-stock {
+  text-align: center;
+  padding: var(--space-xl);
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+  .detail-card {
+    padding: var(--space-lg);
+  }
+
+  .detail-image,
+  .detail-placeholder {
+    height: 200px;
+  }
+
+  .detail-actions {
+    flex-direction: column;
+  }
+}

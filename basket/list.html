@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>장바구니 | 카페</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="list.css">
+</head>
+<body>
+  <nav class="main-nav">
+    <div class="container">
+      <a href="../index.html" class="nav-brand">☕ 카페</a>
+      <ul class="nav-links">
+        <li><a href="../index.html">홈</a></li>
+        <li><a href="../menus/list.html">메뉴</a></li>
+        <li class="active"><a href="list.html">장바구니</a></li>
+        <li><a href="../orders/list.html">주문내역</a></li>
+        <li><a href="../my/index.html">마이페이지</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="container page-content">
+    <div class="page-header">
+      <h1>장바구니</h1>
+      <a href="../menus/list.html" class="btn btn-secondary">+ 메뉴 추가하기</a>
+    </div>
+
+    <div id="cartList">
+      <!-- JS로 렌더링 -->
+    </div>
+
+    <div id="cartEmpty" class="glass-card" style="display:none; text-align:center; padding: var(--space-2xl);">
+      <p style="font-size: 3rem; margin-bottom: var(--space-md);">🛒</p>
+      <p class="empty-message">장바구니가 비어있습니다.</p>
+      <a href="../menus/list.html" class="btn btn-primary" style="margin-top: var(--space-md);">메뉴 보기</a>
+    </div>
+
+    <div id="cartSummary" class="glass-card summary-card" style="display:none;">
+      <div class="summary-row">
+        <span>합계</span>
+        <span id="totalPrice" class="total-price"></span>
+      </div>
+      <div class="summary-actions">
+        <button id="clearBtn" class="btn btn-secondary">전체 삭제</button>
+        <button id="orderBtn" class="btn btn-primary">주문하기</button>
+      </div>
+    </div>
+  </main>
+
+  <script src="../js/data.js"></script>
+  <script src="../js/utils.js"></script>
+  <script src="list.js"></script>
+</body>
+</html>

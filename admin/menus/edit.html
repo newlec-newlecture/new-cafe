@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>관리자 - 메뉴 수정 | 카페</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/variables.css">
+  <link rel="stylesheet" href="edit.css">
+</head>
+<body>
+  <nav class="admin-nav">
+    <div class="container">
+      <a href="../index.html" class="nav-brand">☕ 카페 관리자</a>
+      <ul class="nav-links">
+        <li><a href="../index.html">대시보드</a></li>
+        <li class="active"><a href="list.html">메뉴 관리</a></li>
+        <li><a href="../orders/list.html">주문 관리</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="container page-content">
+    <div class="page-header">
+      <h1>메뉴 수정</h1>
+      <a href="list.html" class="btn btn-secondary">← 목록으로</a>
+    </div>
+
+    <form id="editForm" class="glass-card form-card">
+      <div class="form-group">
+        <label for="name">메뉴명 *</label>
+        <input type="text" id="name" name="name" required placeholder="메뉴 이름을 입력하세요">
+      </div>
+
+      <div class="form-group">
+        <label for="category">카테고리 *</label>
+        <select id="category" name="category" required>
+          <option value="">카테고리를 선택하세요</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="price">가격 *</label>
+        <input type="number" id="price" name="price" required min="0" placeholder="가격을 입력하세요">
+      </div>
+
+      <div class="form-group">
+        <label for="description">설명</label>
+        <textarea id="description" name="description" rows="4" placeholder="메뉴 설명을 입력하세요"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="calories">칼로리</label>
+        <input type="number" id="calories" name="calories" min="0" placeholder="kcal 단위">
+      </div>
+
+      <div class="form-group">
+        <label for="image">이미지 URL</label>
+        <input type="url" id="image" name="image" placeholder="이미지 URL을 입력하세요">
+      </div>
+
+      <div class="form-group">
+        <label class="checkbox-label">
+          <input type="checkbox" id="active" name="active">
+          <span>판매중</span>
+        </label>
+      </div>
+
+      <div class="form-actions">
+        <button type="submit" class="btn btn-primary">저장</button>
+        <a href="list.html" class="btn btn-secondary">취소</a>
+      </div>
+    </form>
+  </main>
+
+  <script src="../../js/data.js"></script>
+  <script src="../../js/utils.js"></script>
+  <script src="edit.js"></script>
+</body>
+</html>
