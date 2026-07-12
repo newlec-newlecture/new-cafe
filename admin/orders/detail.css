@@ -1,0 +1,157 @@
+/* ============================================
+   관리자 - 주문 상세 스타일
+   ============================================ */
+
+.admin-nav {
+  background: var(--color-primary-dark);
+  padding: var(--space-md) 0;
+  margin-bottom: var(--space-xl);
+}
+
+.admin-nav .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-brand {
+  color: var(--color-white) !important;
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.nav-links {
+  display: flex;
+  gap: var(--space-lg);
+}
+
+.nav-links a {
+  color: rgba(255, 255, 255, 0.75);
+  font-weight: 500;
+  padding: var(--space-xs) 0;
+  border-bottom: 2px solid transparent;
+  transition: all var(--transition);
+}
+
+.nav-links a:hover,
+.nav-links.active a {
+  color: var(--color-white);
+  border-bottom-color: var(--color-accent);
+}
+
+.page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-xl);
+}
+
+.page-header h1 {
+  font-size: 1.75rem;
+}
+
+/* ---- 상세 카드 ---- */
+.detail-card {
+  padding: var(--space-xl);
+  max-width: 700px;
+}
+
+.detail-row {
+  display: flex;
+  padding: var(--space-md) 0;
+  border-bottom: 1px solid var(--color-bg-alt);
+}
+
+.detail-row:last-child {
+  border-bottom: none;
+}
+
+.detail-label {
+  width: 120px;
+  font-weight: 600;
+  color: var(--color-text-light);
+  flex-shrink: 0;
+}
+
+.detail-value {
+  flex: 1;
+}
+
+/* ---- 품목 테이블 ---- */
+.items-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: var(--space-md) 0;
+}
+
+.items-table th,
+.items-table td {
+  text-align: left;
+  padding: var(--space-sm) var(--space-xs);
+  border-bottom: 1px solid var(--color-bg-alt);
+}
+
+.items-table th {
+  font-weight: 600;
+  color: var(--color-text-light);
+  font-size: 0.875rem;
+}
+
+.items-table .col-name { width: 40%; }
+.items-table .col-qty { width: 15%; text-align: center; }
+.items-table .col-price { width: 20%; text-align: right; }
+.items-table .col-subtotal { width: 25%; text-align: right; font-weight: 600; }
+
+/* ---- 상태 변경 ---- */
+.status-change {
+  display: flex;
+  gap: var(--space-sm);
+  margin-top: var(--space-lg);
+  flex-wrap: wrap;
+}
+
+.status-btn {
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 0.875rem;
+  transition: all var(--transition);
+  border: 2px solid var(--color-bg-alt);
+  background: var(--color-white);
+  color: var(--color-text-light);
+}
+
+.status-btn:hover {
+  border-color: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+.status-btn.active {
+  background: var(--color-primary);
+  color: var(--color-white);
+  border-color: var(--color-primary);
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+  .admin-nav .container {
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .page-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-md);
+  }
+
+  .detail-row {
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  .detail-label {
+    width: auto;
+  }
+}

@@ -1,0 +1,174 @@
+/* ============================================
+   고객 - 메뉴 목록 스타일
+   ============================================ */
+
+/* 상단 네비 */
+.top-nav {
+  background: var(--color-white);
+  box-shadow: var(--shadow-sm);
+  padding: var(--space-md) 0;
+  margin-bottom: var(--space-xl);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.top-nav .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-brand {
+  color: var(--color-primary) !important;
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.nav-links {
+  display: flex;
+  gap: var(--space-lg);
+}
+
+.nav-links a {
+  color: var(--color-text-light);
+  font-weight: 500;
+  padding: var(--space-xs) 0;
+  border-bottom: 2px solid transparent;
+  transition: all var(--transition);
+}
+
+.nav-links a:hover,
+.nav-links.active a {
+  color: var(--color-primary);
+  border-bottom-color: var(--color-accent);
+}
+
+.page-title {
+  font-size: 1.75rem;
+  margin-bottom: var(--space-xl);
+}
+
+/* ---- 카테고리 탭 ---- */
+.category-tabs {
+  display: flex;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-xl);
+  flex-wrap: wrap;
+}
+
+.category-tabs .tab {
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-full);
+  background: var(--color-bg-alt);
+  color: var(--color-text-light);
+  font-weight: 500;
+  transition: all var(--transition);
+}
+
+.category-tabs .tab:hover {
+  background: var(--color-primary-light);
+  color: var(--color-white);
+}
+
+.category-tabs .tab.active {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+
+/* ---- 메뉴 그리드 ---- */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: var(--space-lg);
+}
+
+.menu-card {
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition), box-shadow var(--transition);
+  cursor: pointer;
+}
+
+.menu-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.menu-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--space-sm);
+}
+
+.menu-card-name {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.menu-card-price {
+  font-weight: 700;
+  color: var(--color-primary);
+  white-space: nowrap;
+}
+
+.menu-card-desc {
+  font-size: 0.875rem;
+  color: var(--color-text-light);
+  margin-bottom: var(--space-md);
+  flex: 1;
+}
+
+.menu-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu-card .category-label {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+.add-cart-btn {
+  padding: var(--space-xs) var(--space-md);
+  border-radius: var(--radius-full);
+  background: var(--color-primary);
+  color: var(--color-white);
+  font-weight: 600;
+  font-size: 0.875rem;
+  transition: all var(--transition);
+}
+
+.add-cart-btn:hover {
+  background: var(--color-primary-dark);
+}
+
+.add-cart-btn:disabled {
+  background: var(--color-text-muted);
+  cursor: not-allowed;
+}
+
+/* ---- 빈 상태 ---- */
+.empty-state {
+  text-align: center;
+  padding: var(--space-3xl) 0;
+  color: var(--color-text-muted);
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+  .top-nav .container {
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .menu-grid {
+    grid-template-columns: 1fr;
+  }
+}

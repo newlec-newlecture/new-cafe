@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>관리자 - 메뉴 수정 | 카페</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/variables.css">
+  <link rel="stylesheet" href="edit.css">
+</head>
+<body>
+  <nav class="admin-nav">
+    <div class="container">
+      <a href="../index.html" class="nav-brand">☕ 카페 관리자</a>
+      <ul class="nav-links">
+        <li><a href="../index.html">대시보드</a></li>
+        <li class="active"><a href="list.html">메뉴 관리</a></li>
+        <li><a href="../orders/list.html">주문 관리</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="container page-content">
+    <div class="page-header">
+      <h1 id="pageTitle">메뉴 수정</h1>
+      <a href="list.html" class="btn btn-secondary">← 목록으로</a>
+    </div>
+
+    <div id="menuNotFound" class="glass-card" style="display:none; text-align:center; padding: 48px;">
+      <p>메뉴를 찾을 수 없습니다.</p>
+      <a href="list.html" class="btn btn-secondary">← 목록으로</a>
+    </div>
+
+    <form id="editForm" class="glass-card form-card" style="display:none;">
+      <input type="hidden" id="menuId">
+
+      <div class="form-group">
+        <label for="category">카테고리</label>
+        <select id="category" required>
+          <option value="">선택하세요</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="name">상품명</label>
+        <input type="text" id="name" placeholder="예: 아메리카노" required>
+      </div>
+
+      <div class="form-group">
+        <label for="price">가격 (원)</label>
+        <input type="number" id="price" placeholder="예: 4000" min="0" required>
+      </div>
+
+      <div class="form-group">
+        <label for="description">설명</label>
+        <textarea id="description" rows="4" placeholder="메뉴에 대한 설명을 입력하세요"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="image">이미지 URL</label>
+        <input type="url" id="image" placeholder="https://example.com/image.jpg">
+      </div>
+
+      <div class="form-group form-checkbox">
+        <label>
+          <input type="checkbox" id="available">
+          판매중
+        </label>
+      </div>
+
+      <div class="form-actions">
+        <button type="submit" class="btn btn-primary">저장하기</button>
+      </div>
+    </form>
+  </main>
+
+  <script src="../../js/data.js"></script>
+  <script src="../../js/utils.js"></script>
+  <script src="edit.js"></script>
+</body>
+</html>

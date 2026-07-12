@@ -1,0 +1,208 @@
+/* ============================================
+   고객 - 메인 페이지 스타일
+   ============================================ */
+
+/* 상단 네비 */
+.top-nav {
+  background: var(--color-white);
+  box-shadow: var(--shadow-sm);
+  padding: var(--space-md) 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.top-nav .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-brand {
+  color: var(--color-primary) !important;
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.nav-links {
+  display: flex;
+  gap: var(--space-lg);
+}
+
+.nav-links a {
+  color: var(--color-text-light);
+  font-weight: 500;
+  padding: var(--space-xs) 0;
+  border-bottom: 2px solid transparent;
+  transition: all var(--transition);
+}
+
+.nav-links a:hover,
+.nav-links.active a {
+  color: var(--color-primary);
+  border-bottom-color: var(--color-accent);
+}
+
+/* ---- 히어로 ---- */
+.hero {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  color: var(--color-white);
+  padding: var(--space-3xl) 0;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  color: var(--color-white);
+  margin-bottom: var(--space-md);
+}
+
+.hero p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  margin-bottom: var(--space-xl);
+}
+
+.hero-btn {
+  padding: var(--space-md) var(--space-xl);
+  font-size: 1.1rem;
+  background: var(--color-white);
+  color: var(--color-primary) !important;
+}
+
+.hero-btn:hover {
+  background: var(--color-secondary);
+  color: var(--color-primary-dark) !important;
+}
+
+/* ---- 섹션 ---- */
+.section {
+  margin-bottom: var(--space-3xl);
+}
+
+.section h2 {
+  font-size: 1.5rem;
+  margin-bottom: var(--space-xl);
+  padding-bottom: var(--space-sm);
+  border-bottom: 2px solid var(--color-bg-alt);
+}
+
+/* ---- 인기 메뉴 그리드 ---- */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: var(--space-lg);
+}
+
+.menu-card {
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition), box-shadow var(--transition);
+  cursor: pointer;
+}
+
+.menu-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.menu-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--space-sm);
+}
+
+.menu-card-name {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.menu-card-price {
+  font-weight: 700;
+  color: var(--color-primary);
+  white-space: nowrap;
+}
+
+.menu-card-desc {
+  font-size: 0.875rem;
+  color: var(--color-text-light);
+  flex: 1;
+}
+
+/* ---- 카테고리 그리드 ---- */
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: var(--space-md);
+}
+
+.category-card {
+  padding: var(--space-xl) var(--space-md);
+  text-align: center;
+  transition: transform var(--transition), box-shadow var(--transition);
+  cursor: pointer;
+}
+
+.category-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.category-card .cat-icon {
+  font-size: 2rem;
+  margin-bottom: var(--space-sm);
+}
+
+.category-card .cat-name {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.category-card .cat-count {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  margin-top: var(--space-xs);
+}
+
+/* ---- 푸터 ---- */
+.footer {
+  background: var(--color-bg-alt);
+  padding: var(--space-xl) 0;
+  text-align: center;
+  color: var(--color-text-light);
+  margin-top: var(--space-3xl);
+}
+
+.footer p {
+  margin-bottom: var(--space-xs);
+}
+
+.footer a {
+  color: var(--color-primary);
+  font-weight: 500;
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+  .top-nav .container {
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .hero h1 {
+    font-size: 1.75rem;
+  }
+
+  .menu-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .category-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

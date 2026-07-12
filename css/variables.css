@@ -210,3 +210,9 @@ h3 { font-size: 1.25rem; }
     padding: 0 var(--space-md);
   }
 }
+
+/* 토스트 애니메이션 */
+@keyframes slideIn {
+from { transform: translateX(100%); opacity: 0; }
+to { transform: translateX(0); opacity: 1; }
+}

@@ -1,0 +1,188 @@
+/* ============================================
+   고객 - 장바구니 스타일
+   ============================================ */
+
+.top-nav {
+  background: var(--color-white);
+  box-shadow: var(--shadow-sm);
+  padding: var(--space-md) 0;
+  margin-bottom: var(--space-xl);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.top-nav .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-brand {
+  color: var(--color-primary) !important;
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.nav-links {
+  display: flex;
+  gap: var(--space-lg);
+}
+
+.nav-links a {
+  color: var(--color-text-light);
+  font-weight: 500;
+  padding: var(--space-xs) 0;
+  border-bottom: 2px solid transparent;
+  transition: all var(--transition);
+}
+
+.nav-links a:hover,
+.nav-links.active a {
+  color: var(--color-primary);
+  border-bottom-color: var(--color-accent);
+}
+
+.page-title {
+  font-size: 1.75rem;
+  margin-bottom: var(--space-xl);
+}
+
+/* ---- 장바구니 항목 ---- */
+.cart-item {
+  padding: var(--space-lg);
+  margin-bottom: var(--space-md);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cart-item-info {
+  flex: 1;
+}
+
+.cart-item-name {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: var(--space-xs);
+}
+
+.cart-item-price-each {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+}
+
+.cart-item-controls {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.quantity-control {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.qty-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-md);
+  background: var(--color-bg-alt);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-text);
+  transition: all var(--transition);
+}
+
+.qty-btn:hover {
+  background: var(--color-primary-light);
+  color: var(--color-white);
+}
+
+.qty-value {
+  min-width: 28px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.cart-item-subtotal {
+  min-width: 80px;
+  text-align: right;
+  font-weight: 700;
+  color: var(--color-primary);
+  font-size: 1.05rem;
+}
+
+.remove-btn {
+  color: var(--color-danger);
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius-sm);
+  transition: all var(--transition);
+}
+
+.remove-btn:hover {
+  background: #FFEBEE;
+}
+
+/* ---- 요약 카드 ---- */
+.summary-card {
+  padding: var(--space-xl);
+  margin-top: var(--space-xl);
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-md) 0;
+  border-bottom: 1px solid var(--color-bg-alt);
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.total-price {
+  color: var(--color-primary);
+  font-size: 1.3rem;
+}
+
+.summary-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-sm);
+  margin-top: var(--space-md);
+}
+
+/* ---- 빈 상태 ---- */
+.empty-state {
+  text-align: center;
+  padding: var(--space-3xl) 0;
+  color: var(--color-text-muted);
+}
+
+.empty-state p {
+  margin-bottom: var(--space-lg);
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+  .top-nav .container {
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .cart-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-md);
+  }
+
+  .cart-item-controls {
+    width: 100%;
+    justify-content: space-between;
+  }
+}

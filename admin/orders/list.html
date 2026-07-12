@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>관리자 - 주문 목록 | 카페</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/variables.css">
+  <link rel="stylesheet" href="list.css">
+</head>
+<body>
+  <nav class="admin-nav">
+    <div class="container">
+      <a href="../index.html" class="nav-brand">☕ 카페 관리자</a>
+      <ul class="nav-links">
+        <li><a href="../index.html">대시보드</a></li>
+        <li><a href="../menus/list.html">메뉴 관리</a></li>
+        <li class="active"><a href="list.html">주문 관리</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="container page-content">
+    <h1 class="page-title">주문 관리</h1>
+
+    <!-- 상태 필터 -->
+    <div class="status-tabs" id="statusTabs">
+      <button class="tab active" data-status="all">전체</button>
+      <button class="tab" data-status="pending">주문 대기</button>
+      <button class="tab" data-status="confirmed">주문 확인</button>
+      <button class="tab" data-status="preparing">준비중</button>
+      <button class="tab" data-status="ready">출품 완료</button>
+      <button class="tab" data-status="completed">완료</button>
+      <button class="tab" data-status="cancelled">취소</button>
+    </div>
+
+    <!-- 주문 목록 -->
+    <div id="orderList">
+      <!-- JS로 렌더링 -->
+    </div>
+
+    <div id="emptyState" class="empty-state" style="display:none;">
+      <p>주문 내역이 없습니다.</p>
+    </div>
+  </main>
+
+  <script src="../../js/data.js"></script>
+  <script src="../../js/utils.js"></script>
+  <script src="list.js"></script>
+</body>
+</html>

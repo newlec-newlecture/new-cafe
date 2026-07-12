@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>카페 | 메인</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <nav class="top-nav">
+    <div class="container">
+      <a href="index.html" class="nav-brand">☕ 카페</a>
+      <ul class="nav-links">
+        <li class="active"><a href="index.html">홈</a></li>
+        <li><a href="menus/list.html">메뉴</a></li>
+        <li><a href="basket/list.html">장바구니 <span id="cartBadge" class="badge" style="display:none;"></span></a></li>
+        <li><a href="my/index.html">마이페이지</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container">
+      <h1>따뜻한 한 잔, 시작하세요</h1>
+      <p>신선한 원두로 만든 커피와 다양한 디저트를 즐겨보세요</p>
+      <a href="menus/list.html" class="btn btn-primary hero-btn">메뉴 보기</a>
+    </div>
+  </header>
+
+  <main class="container page-content">
+    <section class="section">
+      <h2>인기 메뉴</h2>
+      <div class="menu-grid" id="popularGrid">
+        <!-- JS로 렌더링 -->
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>카테고리</h2>
+      <div class="category-grid" id="categoryGrid">
+        <!-- JS로 렌더링 -->
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>☕ 카페 &copy; 2026. All rights reserved.</p>
+      <p><a href="admin/index.html">관리자 로그인</a></p>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="index.js"></script>
+</body>
+</html>

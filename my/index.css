@@ -1,0 +1,192 @@
+/* ============================================
+   고객 - 마이페이지 스타일
+   ============================================ */
+
+.top-nav {
+  background: var(--color-white);
+  box-shadow: var(--shadow-sm);
+  padding: var(--space-md) 0;
+  margin-bottom: var(--space-xl);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.top-nav .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-brand {
+  color: var(--color-primary) !important;
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.nav-links {
+  display: flex;
+  gap: var(--space-lg);
+}
+
+.nav-links a {
+  color: var(--color-text-light);
+  font-weight: 500;
+  padding: var(--space-xs) 0;
+  border-bottom: 2px solid transparent;
+  transition: all var(--transition);
+}
+
+.nav-links a:hover,
+.nav-links.active a {
+  color: var(--color-primary);
+  border-bottom-color: var(--color-accent);
+}
+
+.page-title {
+  font-size: 1.75rem;
+  margin-bottom: var(--space-xl);
+}
+
+/* ---- 프로필 ---- */
+.profile-section {
+  padding: var(--space-xl);
+  margin-bottom: var(--space-xl);
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: var(--radius-full);
+  background: var(--color-bg-alt);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+}
+
+.profile-header h2 {
+  font-size: 1.25rem;
+  margin-bottom: var(--space-xs);
+}
+
+.member-since {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+}
+
+/* ---- 통계 그리드 ---- */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+  margin-bottom: var(--space-2xl);
+}
+
+.stat-card {
+  padding: var(--space-lg);
+  text-align: center;
+}
+
+.stat-label {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-xs);
+}
+
+.stat-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+/* ---- 섹션 ---- */
+.section {
+  margin-bottom: var(--space-2xl);
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-lg);
+  padding-bottom: var(--space-sm);
+  border-bottom: 2px solid var(--color-bg-alt);
+}
+
+.section-header h2 {
+  font-size: 1.25rem;
+}
+
+/* ---- 주문 내역 목록 ---- */
+.order-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-md);
+  margin-bottom: var(--space-sm);
+  border-radius: var(--radius-md);
+  background: var(--color-white);
+  border: 1px solid var(--color-bg-alt);
+  transition: all var(--transition);
+  cursor: pointer;
+}
+
+.order-item:hover {
+  border-color: var(--color-primary-light);
+  box-shadow: var(--shadow-sm);
+}
+
+.order-item-left {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.order-id {
+  font-weight: 700;
+}
+
+.order-date {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+.order-item-right {
+  text-align: right;
+}
+
+.order-total {
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+/* ---- 빈 상태 ---- */
+.empty-state {
+  text-align: center;
+  padding: var(--space-2xl) 0;
+  color: var(--color-text-muted);
+}
+
+.empty-state p {
+  margin-bottom: var(--space-md);
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+  .top-nav .container {
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+}

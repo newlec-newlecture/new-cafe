@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>마이페이지 | 카페</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <nav class="top-nav">
+    <div class="container">
+      <a href="../index.html" class="nav-brand">☕ 카페</a>
+      <ul class="nav-links">
+        <li><a href="../index.html">홈</a></li>
+        <li><a href="../menus/list.html">메뉴</a></li>
+        <li><a href="../basket/list.html">장바구니 <span id="cartBadge" class="badge" style="display:none;"></span></a></li>
+        <li class="active"><a href="index.html">마이페이지</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="container page-content">
+    <h1 class="page-title">마이페이지</h1>
+
+    <div class="profile-section glass-card">
+      <div class="profile-header">
+        <div class="avatar">👤</div>
+        <div>
+          <h2 id="userName">게스트</h2>
+          <p class="member-since">2026년 7월 가입</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="stats-grid">
+      <div class="stat-card glass-card">
+        <p class="stat-label">총 주문</p>
+        <p class="stat-value" id="totalOrders">0</p>
+      </div>
+      <div class="stat-card glass-card">
+        <p class="stat-label">총 금액</p>
+        <p class="stat-value" id="totalAmount">0원</p>
+      </div>
+      <div class="stat-card glass-card">
+        <p class="stat-label">장바구니</p>
+        <p class="stat-value" id="cartCount">0개</p>
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="section-header">
+        <h2>최근 주문</h2>
+        <a href="../orders/list.html" class="btn btn-secondary btn-sm">전체 보기 →</a>
+      </div>
+      <div id="recentOrders">
+        <!-- JS로 렌더링 -->
+      </div>
+      <div id="noOrders" class="empty-state" style="display:none;">
+        <p>아직 주문 내역이 없습니다.</p>
+        <a href="../menus/list.html" class="btn btn-primary">메뉴 보기</a>
+      </div>
+    </section>
+  </main>
+
+  <script src="../js/data.js"></script>
+  <script src="../js/utils.js"></script>
+  <script src="index.js"></script>
+</body>
+</html>

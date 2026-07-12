@@ -1,0 +1,121 @@
+/* 5단계: 고객 - 주문 상세 */
+
+.page-content {
+  padding: 48px 0;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 24px;
+  color: var(--color-primary);
+  font-weight: 500;
+  transition: color var(--transition);
+}
+
+.back-link:hover {
+  color: var(--color-primary-dark);
+}
+
+.page-title {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 32px;
+}
+
+.order-detail-card {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--glass-shadow);
+  padding: 32px;
+}
+
+.order-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--color-bg-alt);
+}
+
+.order-id {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.order-status {
+  padding: 4px 16px;
+  border-radius: var(--radius-full);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.status-pending { background: #FFF3E0; color: var(--color-warning); }
+.status-confirmed { background: #E3F2FD; color: var(--color-info); }
+.status-preparing { background: #FFF3E0; color: var(--color-warning); }
+.status-ready { background: #E8F5E9; color: var(--color-success); }
+.status-completed { background: #E8F5E9; color: var(--color-success); }
+.status-cancelled { background: #FFEBEE; color: var(--color-danger); }
+
+.order-items {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.order-item-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--color-bg-alt);
+}
+
+.order-item-name {
+  font-weight: 500;
+}
+
+.order-item-qty {
+  color: var(--color-text-light);
+  font-size: 0.9rem;
+}
+
+.order-item-price {
+  font-weight: 600;
+}
+
+.order-total-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 16px;
+  border-top: 2px solid var(--color-text);
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.order-date-info {
+  margin-top: 24px;
+  color: var(--color-text-light);
+  font-size: 0.9rem;
+}
+
+.not-found {
+  text-align: center;
+  padding: 64px 0;
+  color: var(--color-text-light);
+}
+
+@media (max-width: 768px) {
+  .order-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}

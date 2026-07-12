@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>메뉴 | 카페</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="list.css">
+</head>
+<body>
+  <nav class="top-nav">
+    <div class="container">
+      <a href="../index.html" class="nav-brand">☕ 카페</a>
+      <ul class="nav-links">
+        <li><a href="../index.html">홈</a></li>
+        <li class="active"><a href="list.html">메뉴</a></li>
+        <li><a href="../basket/list.html">장바구니 <span id="cartBadge" class="badge" style="display:none;"></span></a></li>
+        <li><a href="../my/index.html">마이페이지</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="container page-content">
+    <h1 class="page-title">메뉴</h1>
+
+    <!-- 카테고리 필터 -->
+    <div class="category-tabs" id="categoryTabs">
+      <button class="tab active" data-category="0">전체</button>
+    </div>
+
+    <!-- 메뉴 그리드 -->
+    <div class="menu-grid" id="menuGrid">
+      <!-- JS로 렌더링 -->
+    </div>
+
+    <div id="emptyState" class="empty-state" style="display:none;">
+      <p>등록된 메뉴가 없습니다.</p>
+    </div>
+  </main>
+
+  <script src="../js/data.js"></script>
+  <script src="../js/utils.js"></script>
+  <script src="list.js"></script>
+</body>
+</html>

@@ -1,8 +1,5 @@
-/* ============================================
-   관리자 - 메뉴 목록 스타일
-   ============================================ */
+/* 2단계: 관리자 메뉴 목록 */
 
-/* ---- 헤더 ---- */
 .admin-nav {
   background: var(--color-primary-dark);
   padding: var(--space-md) 0;
@@ -41,164 +38,136 @@
   border-bottom-color: var(--color-accent);
 }
 
-/* ---- 페이지 헤더 ---- */
+.page-content {
+  padding: var(--space-2xl) 0;
+}
+
 .page-header {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  margin-bottom: var(--space-xl);
+  align-items: center;
+  margin-bottom: 32px;
 }
 
-.page-header h1 {
-  font-size: 1.75rem;
+.page-title {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-text);
 }
 
-/* ---- 필터 바 ---- */
-.filter-bar {
+/* 카테고리 탭 */
+.category-tabs {
   display: flex;
-  gap: var(--space-sm);
-  margin-bottom: var(--space-lg);
+  gap: 8px;
+  margin-bottom: 24px;
   flex-wrap: wrap;
 }
 
-.filter-btn {
-  padding: var(--space-xs) var(--space-md);
+.tab-btn,
+.category-tab {
+  padding: 8px 20px;
   border-radius: var(--radius-full);
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
   background: var(--color-bg-alt);
   color: var(--color-text-light);
-  font-weight: 500;
-  font-size: 0.875rem;
   transition: all var(--transition);
+  border: 1px solid transparent;
+  font-family: var(--font-body);
 }
 
-.filter-btn:hover {
+.tab-btn:hover,
+.category-tab:hover {
   background: var(--color-primary-light);
   color: var(--color-white);
 }
 
-.filter-btn.active {
+.tab-btn.active,
+.category-tab.active {
   background: var(--color-primary);
   color: var(--color-white);
 }
 
-/* ---- 메뉴 테이블 ---- */
-.menu-table-card {
-  padding: var(--space-lg);
+/* 테이블 */
+.menu-table-wrapper {
+  overflow-x: auto;
+  border-radius: var(--radius-lg);
 }
 
 .menu-table {
   width: 100%;
   border-collapse: collapse;
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
 }
 
-.menu-table thead th {
+.menu-table thead {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+
+.menu-table th {
+  padding: 14px 16px;
   text-align: left;
-  padding: var(--space-sm) var(--space-md);
-  font-size: 0.875rem;
   font-weight: 600;
-  color: var(--color-text-light);
-  border-bottom: 2px solid var(--color-bg-alt);
+  font-size: 0.9rem;
 }
 
-.menu-table tbody td {
-  padding: var(--space-md);
+.menu-table td {
+  padding: 12px 16px;
   border-bottom: 1px solid var(--color-bg-alt);
-  vertical-align: middle;
+  font-size: 0.95rem;
 }
 
-.menu-table tbody tr:last-child td {
-  border-bottom: none;
+.menu-table tbody tr {
+  transition: background var(--transition);
 }
 
 .menu-table tbody tr:hover {
-  background: rgba(111, 78, 55, 0.04);
+  background: rgba(111, 78, 55, 0.05);
 }
 
-.menu-name {
-  font-weight: 600;
-}
-
-.menu-name a {
+.menu-name-link {
   color: var(--color-primary);
-}
-
-.menu-name a:hover {
-  text-decoration: underline;
-}
-
-.category-label {
-  color: var(--color-text-light);
-  font-size: 0.875rem;
-}
-
-.price {
   font-weight: 600;
-  font-variant-numeric: tabular-nums;
+  transition: color var(--transition);
 }
 
-/* 관리 버튼 */
+.menu-name-link:hover {
+  color: var(--color-primary-dark);
+}
+
+.status-available {
+  color: var(--color-success);
+  font-weight: 600;
+}
+
+.status-unavailable {
+  color: var(--color-danger);
+  font-weight: 600;
+}
+
 .action-btns {
   display: flex;
-  gap: var(--space-xs);
+  gap: 8px;
 }
 
 .empty-message {
   text-align: center;
-  color: var(--color-text-muted);
-  padding: var(--space-2xl) !important;
+  color: var(--color-text-light);
+  padding: 64px 0;
+  font-size: 1rem;
 }
 
-/* 반응형 */
 @media (max-width: 768px) {
-  .admin-nav .container {
-    flex-direction: column;
-    gap: var(--space-sm);
-  }
-
   .page-header {
     flex-direction: column;
     align-items: flex-start;
-    gap: var(--space-md);
-  }
-
-  .menu-table thead {
-    display: none;
-  }
-
-  .menu-table tbody tr {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: var(--space-xs) var(--space-md);
-    padding: var(--space-md) 0;
-  }
-
-  .menu-table tbody td {
-    border-bottom: none;
-    padding: 0;
-  }
-
-  .menu-table tbody td:nth-child(1) { /* 번호 */
-    display: none;
-  }
-
-  .menu-table tbody td:nth-child(2) { /* 카테고리 */
-    grid-column: 1;
-  }
-
-  .menu-table tbody td:nth-child(3) { /* 메뉴명 */
-    grid-column: 1;
-  }
-
-  .menu-table tbody td:nth-child(4) { /* 가격 */
-    grid-column: 1;
-  }
-
-  .menu-table tbody td:nth-child(5) { /* 상태 */
-    grid-column: 1;
-  }
-
-  .menu-table tbody td:nth-child(6) { /* 관리 */
-    grid-column: 2;
-    justify-self: end;
+    gap: 16px;
   }
 }

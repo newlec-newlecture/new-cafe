@@ -2,29 +2,32 @@
    관리자 - 메뉴 목록 로직
    ============================================ */
 
+let currentCategory = 'all';
+
 document.addEventListener('DOMContentLoaded', () => {
-  renderCategoryFilters();
+  renderCategoryTabs();
   renderMenuList('all');
 
-  // 필터 클릭 이벤트
-  document.querySelector('.filter-bar').addEventListener('click', (e) => {
-    const btn = e.target.closest('.filter-btn');
+  // 탭 클릭 이벤트
+  document.getElementById('categoryTabs').addEventListener('click', (e) => {
+    const btn = e.target.closest('.tab-btn');
     if (!btn) return;
 
-    const category = btn.dataset.category;
-    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    currentCategory = btn.dataset.category;
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
 
-    renderMenuList(category);
+    renderMenuList(currentCategory);
   });
 });
 
-function renderCategoryFilters() {
+function renderCategoryTabs() {
   const categories = getCategories();
-  const container = document.getElementById('categoryFilters');
-  container.innerHTML = categories
-    .map(c => `<button class="filter-btn" data-category="${c.id}">${c.name}</button>`)
-    .join('');
+  const container = document.getElementById('categoryTabs');
+  container.innerHTML = `
+    <button class="tab-btn active" data-category="all">전체</button>
+    ${categories.map(c => `<button class="tab-btn" data-category="${c.id}">${c.name}</button>`).join('')}
+  `;
 }
 
 function renderMenuList(category) {
@@ -34,14 +37,18 @@ function renderMenuList(category) {
     menus = menus.filter(m => m.categoryId === Number(category));
   }
 
-  const tbody = document.getElementById('menuListBody');
+  const tbody = document.getElementById('menuTableBody');
+  const emptyMsg = document.getElementById('emptyMessage');
 
   if (menus.length === 0) {
-    tbody.innerHTML = '<tr><td colspan="6" class="empty-message">메뉴가 없습니다.</td></tr>';
+    tbody.innerHTML = '';
+    emptyMsg.style.display = 'block';
     return;
   }
 
-  tbody.innerHTML = menus.map((menu, i) => {
+  emptyMsg.style.display = 'none';
+
+  tbody.innerHTML = menus.map((menu) => {
     const cat = getCategoryById(menu.categoryId);
     const catName = cat ? cat.name : '-';
     const statusBadge = menu.available
@@ -50,11 +57,10 @@ function renderMenuList(category) {
 
     return `
       <tr>
-        <td>${i + 1}</td>
-        <td><span class="category-label">${catName}</span></td>
         <td class="menu-name">
           <a href="detail.html?id=${menu.id}">${menu.name}</a>
         </td>
+        <td><span class="category-label">${catName}</span></td>
         <td class="price">${formatPrice(menu.price)}</td>
         <td>${statusBadge}</td>
         <td>
@@ -74,7 +80,7 @@ function renderMenuList(category) {
       if (confirmDialog('정말 이 메뉴를 삭제하시겠습니까?')) {
         deleteMenu(id);
         showToast('메뉴가 삭제되었습니다.', 'success');
-        renderMenuList(category);
+        renderMenuList(currentCategory);
       }
     });
   });

@@ -1,0 +1,177 @@
+/* ============================================
+   관리자 - 대시보드 스타일
+   ============================================ */
+
+.admin-nav {
+  background: var(--color-primary-dark);
+  padding: var(--space-md) 0;
+  margin-bottom: var(--space-xl);
+}
+
+.admin-nav .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-brand {
+  color: var(--color-white) !important;
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.nav-links {
+  display: flex;
+  gap: var(--space-lg);
+}
+
+.nav-links a {
+  color: rgba(255, 255, 255, 0.75);
+  font-weight: 500;
+  padding: var(--space-xs) 0;
+  border-bottom: 2px solid transparent;
+  transition: all var(--transition);
+}
+
+.nav-links a:hover,
+.nav-links.active a {
+  color: var(--color-white);
+  border-bottom-color: var(--color-accent);
+}
+
+.page-title {
+  font-size: 1.75rem;
+  margin-bottom: var(--space-xl);
+}
+
+/* ---- 통계 그리드 ---- */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-md);
+  margin-bottom: var(--space-2xl);
+}
+
+.stat-card {
+  padding: var(--space-lg);
+  text-align: center;
+}
+
+.stat-label {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-xs);
+}
+
+.stat-value {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+/* ---- 섹션 ---- */
+.section {
+  margin-bottom: var(--space-2xl);
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-lg);
+  padding-bottom: var(--space-sm);
+  border-bottom: 2px solid var(--color-bg-alt);
+}
+
+.section-header h2 {
+  font-size: 1.25rem;
+}
+
+/* ---- 주문 내역 ---- */
+.order-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-md);
+  margin-bottom: var(--space-sm);
+  border-radius: var(--radius-md);
+  background: var(--color-white);
+  border: 1px solid var(--color-bg-alt);
+  transition: all var(--transition);
+  cursor: pointer;
+}
+
+.order-item:hover {
+  border-color: var(--color-primary-light);
+  box-shadow: var(--shadow-sm);
+}
+
+.order-item-left {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.order-id {
+  font-weight: 700;
+}
+
+.order-date {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+.order-item-right {
+  text-align: right;
+}
+
+.order-total {
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+/* ---- 카테고리 요약 ---- */
+.category-summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: var(--space-md);
+}
+
+.cat-stat {
+  padding: var(--space-md);
+  text-align: center;
+}
+
+.cat-stat-name {
+  font-weight: 700;
+  margin-bottom: var(--space-xs);
+}
+
+.cat-stat-count {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+}
+
+/* ---- 빈 상태 ---- */
+.empty-state {
+  text-align: center;
+  padding: var(--space-2xl) 0;
+  color: var(--color-text-muted);
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+  .admin-nav .container {
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .category-summary {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
