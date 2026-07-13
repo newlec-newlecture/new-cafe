@@ -12,18 +12,18 @@ const DEFAULT_CATEGORIES = [
 ];
 
 const DEFAULT_MENUS = [
-  { id: 1, categoryId: 1, name: '아메리카노', price: 4000, description: '클래식 원베인 커피', image: '', available: true },
-  { id: 2, categoryId: 1, name: '카페라테', price: 4500, description: '크리미한 라떼', image: '', available: true },
-  { id: 3, categoryId: 1, name: '카푸치노', price: 4500, description: '부드러운 스팀밀크와 에스프레소', image: '', available: true },
-  { id: 4, categoryId: 1, name: '바닐라 라테', price: 5000, description: '바닐라 시럽을 넣은 라떼', image: '', available: true },
-  { id: 5, categoryId: 2, name: '그린티', price: 3500, description: '정장 녹차', image: '', available: true },
-  { id: 6, categoryId: 2, name: '얼그레이', price: 3800, description: '베르가못 향의 홍차', image: '', available: true },
-  { id: 7, categoryId: 3, name: '망고 스무디', price: 5500, description: '신선한 망고 스무디', image: '', available: true },
-  { id: 8, categoryId: 3, name: '스트로베리 요거트', price: 5500, description: '딸기와 요거트의 만남', image: '', available: true },
-  { id: 9, categoryId: 4, name: '초콜릿 케이크', price: 6000, description: '부드러운 다크 초콜릿 케이크', image: '', available: true },
-  { id: 10, categoryId: 4, name: '크루아상', price: 3500, description: '바삭한 프렌치 크루아상', image: '', available: true },
-  { id: 11, categoryId: 5, name: '감자칩', price: 2500, description: '바삭 감자칩', image: '', available: true },
-  { id: 12, categoryId: 5, name: '쿠키 (2개)', price: 2000, description: '부드러운 초콜릿 칩 쿠키', image: '', available: true },
+  { id: 1, categoryId: 1, name: '아메리카노', price: 4000, description: '클래식 원베인 커피', image: 'https://images.unsplash.com/photo-1509042239860-f5506700bf2d?w=600&q=80', available: true },
+  { id: 2, categoryId: 1, name: '카페라테', price: 4500, description: '크리미한 라떼', image: 'https://images.unsplash.com/photo-1572442388796-d18929a1bc6d?w=600&q=80', available: true },
+  { id: 3, categoryId: 1, name: '카푸치노', price: 4500, description: '부드러운 스팀밀크와 에스프레소', image: 'https://images.unsplash.com/photo-1572442388796-d18929a1bc6d?w=600&q=80', available: true },
+  { id: 4, categoryId: 1, name: '바닐라 라테', price: 5000, description: '바닐라 시럽을 넣은 라떼', image: 'https://images.unsplash.com/photo-1485808191679-5d68510b5150?w=600&q=80', available: true },
+  { id: 5, categoryId: 2, name: '그린티', price: 3500, description: '정장 녹차', image: 'https://images.unsplash.com/photo-1556856120-bf4cf9e3152a?w=600&q=80', available: true },
+  { id: 6, categoryId: 2, name: '얼그레이', price: 3800, description: '베르가못 향의 홍차', image: 'https://images.unsplash.com/photo-1571934817361-0df063b01562?w=600&q=80', available: true },
+  { id: 7, categoryId: 3, name: '망고 스무디', price: 5500, description: '신선한 망고 스무디', image: 'https://images.unsplash.com/photo-1623065422902-34f6c56a33e9?w=600&q=80', available: true },
+  { id: 8, categoryId: 3, name: '스트로베리 요거트', price: 5500, description: '딸기와 요거트의 만남', image: 'https://images.unsplash.com/photo-1553530669-ba21c78265f2?w=600&q=80', available: true },
+  { id: 9, categoryId: 4, name: '초콜릿 케이크', price: 6000, description: '부드러운 다크 초콜릿 케이크', image: 'https://images.unsplash.com/photo-1578985545062-69928614131d?w=600&q=80', available: true },
+  { id: 10, categoryId: 4, name: '크루아상', price: 3500, description: '바삭한 프렌치 크루아상', image: 'https://images.unsplash.com/photo-1555507036-ab56a72b8806?w=600&q=80', available: true },
+  { id: 11, categoryId: 5, name: '감자칩', price: 2500, description: '바삭 감자칩', image: 'https://images.unsplash.com/photo-1566478989047-ecba41bb8b94?w=600&q=80', available: true },
+  { id: 12, categoryId: 5, name: '쿠키 (2개)', price: 2000, description: '부드러운 초콜릿 칩 쿠키', image: 'https://images.unsplash.com/photo-1499636168143-bd63550a2305?w=600&q=80', available: true },
 ];
 
 /**

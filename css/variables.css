@@ -51,8 +51,11 @@
   --glass-shadow: 0 8px 32px rgba(0,0,0,0.08);
   --glass-blur:   blur(12px);
 
-  /* ---- 트랜지션 ---- */
-  --transition: 0.2s ease;
+/* ---- 히어로 배경 이미지 ---- */
+--hero-bg-image: url('https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=1920&q=80');
+
+/* ---- 트랜지션 ---- */
+--transition: 0.2s ease;
 }
 
 /* ============================================

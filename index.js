@@ -34,11 +34,16 @@ function renderPopularMenus() {
     const card = document.createElement('div');
     card.className = 'menu-card glass-card';
     card.innerHTML = `
-      <div class="menu-card-header">
-        <span class="menu-card-name">${menu.name}</span>
-        <span class="menu-card-price">${formatPrice(menu.price)}</span>
+      <div class="menu-card-image">
+        <img src="${menu.image || 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600&q=80'}" alt="${menu.name}" loading="lazy">
       </div>
-      <p class="menu-card-desc">${menu.description || ''}</p>
+      <div class="menu-card-body">
+        <div class="menu-card-header">
+          <span class="menu-card-name">${menu.name}</span>
+          <span class="menu-card-price">${formatPrice(menu.price)}</span>
+        </div>
+        <p class="menu-card-desc">${menu.description || ''}</p>
+      </div>
     `;
     card.addEventListener('click', () => {
       location.href = `menus/detail.html?id=${menu.id}`;

@@ -25,6 +25,12 @@
   <main class="container page-content">
     <h1 class="page-title">메뉴</h1>
 
+    <!-- 검색 바 -->
+    <div class="search-bar">
+      <input type="text" id="searchInput" class="search-input" placeholder="메뉴 검색...">
+      <button id="searchBtn" class="btn btn-primary">검색</button>
+    </div>
+
     <!-- 카테고리 필터 -->
     <div class="category-tabs" id="categoryTabs">
       <button class="tab active" data-category="0">전체</button>
@@ -35,8 +41,13 @@
       <!-- JS로 렌더링 -->
     </div>
 
+    <!-- 페이저 -->
+    <div class="pager" id="pager">
+      <!-- JS로 렌더링 -->
+    </div>
+
     <div id="emptyState" class="empty-state" style="display:none;">
-      <p>등록된 메뉴가 없습니다.</p>
+      <p>검색 결과가 없습니다.</p>
     </div>
   </main>
 
